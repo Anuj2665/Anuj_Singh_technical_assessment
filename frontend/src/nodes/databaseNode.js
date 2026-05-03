@@ -1,6 +1,7 @@
 // databaseNode.js
 
 import { BaseNode } from './baseNode';
+import { SimpleTextField } from '../fields';
 
 export const DatabaseNode = ({ id, data }) => {
     return (
@@ -10,9 +11,7 @@ export const DatabaseNode = ({ id, data }) => {
             leftHandles={[{ id: 'input' }]}
             rightHandles={[{ id: 'output' }]}
         >
-            <div>
-                <span>🗄️ Database Connection</span>
-            </div>
+            <SimpleTextField text="🗄️ Database Connection" />
         </BaseNode>
     );
 };

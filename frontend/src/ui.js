@@ -121,6 +121,9 @@ export const PipelineUI = () => {
                 snapGrid={[gridSize, gridSize]}
                 connectionLineType='smoothstep'
                 fitView
+                nodesDraggable={true}
+                nodesConnectable={true}
+                elementsSelectable={true}
             >
                 <Background 
                     color="var(--border-medium)" 
@@ -129,7 +132,6 @@ export const PipelineUI = () => {
                     style={{ opacity: 0.5 }}
                 />
                 <Controls />
-                <MiniMap />
             </ReactFlow>
         </div>
     )

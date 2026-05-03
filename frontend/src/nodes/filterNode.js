@@ -1,6 +1,7 @@
 // filterNode.js
 
 import { BaseNode } from './baseNode';
+import { SimpleTextField } from '../fields';
 
 export const FilterNode = ({ id, data }) => {
     return (
@@ -13,9 +14,7 @@ export const FilterNode = ({ id, data }) => {
                 { id: 'fail' }
             ]}
         >
-            <div>
-                <span>🔍 Conditional Filter</span>
-            </div>
+            <SimpleTextField text="🔍 Conditional Filter" />
         </BaseNode>
     );
 };

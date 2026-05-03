@@ -1,6 +1,7 @@
 // transformNode.js
 
 import { BaseNode } from './baseNode';
+import { SimpleTextField } from '../fields';
 
 export const TransformNode = ({ id, data }) => {
     return (
@@ -10,9 +11,7 @@ export const TransformNode = ({ id, data }) => {
             leftHandles={[{ id: 'input' }]}
             rightHandles={[{ id: 'output' }]}
         >
-            <div>
-                <span>🔧 Data Transform</span>
-            </div>
+            <SimpleTextField text="🔧 Data Transform" />
         </BaseNode>
     );
 };

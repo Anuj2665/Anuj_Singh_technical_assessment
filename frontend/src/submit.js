@@ -29,7 +29,7 @@ export const SubmitButton = () => {
                 `Pipeline Analysis:\n\n` +
                 `Number of Nodes: ${data.num_nodes}\n` +
                 `Number of Edges: ${data.num_edges}\n` +
-                `Is DAG: ${data.is_dag ? 'Yes' : 'No'}`
+                `Is DAG(Directed Acyclic Graph): ${data.is_dag ? 'Yes' : 'No'}`
             );
         } catch (error) {
             console.error('Error submitting pipeline:', error);
@@ -41,8 +41,8 @@ export const SubmitButton = () => {
         <div 
             style={{ 
                 position: 'fixed',
-                right: '16px',
-                bottom: '16px',
+                right: '20px',
+                bottom: '20px',
                 zIndex: 1000,
                 width: '160px',
             }}

@@ -1,6 +1,7 @@
 // mathNode.js
 
 import { BaseNode } from './baseNode';
+import { SimpleTextField } from '../fields';
 
 export const MathNode = ({ id, data }) => {
     return (
@@ -13,9 +14,7 @@ export const MathNode = ({ id, data }) => {
             ]}
             rightHandles={[{ id: 'result' }]}
         >
-            <div>
-                <span>➗ Math Operation</span>
-            </div>
+            <SimpleTextField text="➗ Math Operation" />
         </BaseNode>
     );
 };

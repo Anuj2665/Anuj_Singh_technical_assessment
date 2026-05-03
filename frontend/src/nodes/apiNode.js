@@ -1,6 +1,7 @@
 // apiNode.js
 
 import { BaseNode } from './baseNode';
+import { SimpleTextField } from '../fields';
 
 export const APINode = ({ id, data }) => {
     return (
@@ -13,9 +14,7 @@ export const APINode = ({ id, data }) => {
                 { id: 'error' }
             ]}
         >
-            <div>
-                <span>🌐 HTTP API Call</span>
-            </div>
+            <SimpleTextField text="🌐 HTTP API Call" />
         </BaseNode>
     );
 };

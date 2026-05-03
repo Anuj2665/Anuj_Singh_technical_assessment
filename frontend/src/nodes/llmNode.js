@@ -1,6 +1,7 @@
 // llmNode.js
 
 import { BaseNode } from './baseNode';
+import { SimpleTextField } from '../fields';
 
 export const LLMNode = ({ id, data }) => {
     return (
@@ -13,9 +14,7 @@ export const LLMNode = ({ id, data }) => {
             ]}
             rightHandles={[{ id: 'response' }]}
         >
-            <div>
-                <span>This is a LLM.</span>
-            </div>
+            <SimpleTextField text="This is a LLM." />
         </BaseNode>
     );
 };

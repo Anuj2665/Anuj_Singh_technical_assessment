@@ -18,7 +18,7 @@
   
   --accent-primary: #1a73e8;
   --accent-hover: #174ea6;
-  --accent-light: rgba(26, 115, 232, 0.1);
+  --accent-light: rgba(26, 115, 232, 0.08);
   
   --shadow-sm: 0 1px 2px 0 rgba(60, 64, 67, 0.08);
   --shadow-md: 0 2px 6px 0 rgba(60, 64, 67, 0.12);
@@ -35,17 +35,16 @@
 }
 
 [data-theme="dark"] {
-  /* Dark mode - lighter background so dots show */
-  --bg-primary: #2d313a;
-  --bg-secondary: #3c404a;
-  --bg-canvas: #1f2229;
+  --bg-primary: #1e2127;
+  --bg-secondary: #2d3139;
+  --bg-canvas: #16181d;
   --bg-toolbar: rgba(45, 49, 58, 0.95);
   
   --text-primary: #e8eaed;
   --text-secondary: #bdc1c6;
   --text-muted: #9aa0a6;
   
-  --border-light: #5f6368;
+  --border-light: #3c4043;
   --border-medium: #757b80;
   
   --accent-primary: #8ab4f8;
@@ -53,7 +52,7 @@
   --accent-light: rgba(138, 180, 248, 0.15);
   
   /* Grid dots - lighter for dark mode visibility */
-  --grid-color: #6b7075;
+  --grid-color: #5f6368;
 }
 
 * {
@@ -122,30 +121,6 @@ body {
 .react-flow__controls button svg {
   width: 14px !important;
   height: 14px !important;
-}
-
-/* Minimap - positioned above submit button with proper gap */
-.react-flow__minimap {
-  background: var(--bg-secondary) !important;
-  border: 1px solid var(--border-light) !important;
-  border-radius: var(--radius-md) !important;
-  box-shadow: var(--shadow-md) !important;
-  right: 16px !important;
-  bottom: 78px !important; /* Proper gap above button */
-  width: 160px !important;
-  height: 100px !important;
-}
-
-.react-flow__minimap-mask {
-  fill: rgba(0, 0, 0, 0.15) !important;
-}
-
-.react-flow__minimap-node {
-  fill: var(--accent-primary) !important;
-}
-
-[data-theme="dark"] .react-flow__minimap-mask {
-  fill: rgba(0, 0, 0, 0.3) !important;
 }
 
 .react-flow__attribution {

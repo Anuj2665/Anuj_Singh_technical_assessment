@@ -1,64 +1,70 @@
 // draggableNode.js
-
-export const DraggableNode = ({ type, label, icon = '📦' }) => {
-    const onDragStart = (event, nodeType) => {
-        const appData = { nodeType }
-        event.target.style.cursor = 'grabbing';
-        event.dataTransfer.setData('application/reactflow', JSON.stringify(appData));
-        event.dataTransfer.effectAllowed = 'move';
-    };
-
-    return (
-        <div
-            className={type}
-            onDragStart={(event) => onDragStart(event, type)}
-            onDragEnd={(event) => (event.target.style.cursor = 'grab')}
-            style={{
-                cursor: 'grab',
-                minWidth: '72px',
-                height: '72px',
-                display: 'flex',
-                alignItems: 'center',
-                borderRadius: '12px',
-                background: 'linear-gradient(145deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95))',
-                justifyContent: 'center',
-                flexDirection: 'column',
-                gap: '6px',
-                border: '1px solid rgba(99, 102, 241, 0.3)',
-                boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
-                transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
-                padding: '8px',
-                userSelect: 'none',
-                WebkitUserSelect: 'none',
-            }}
-            draggable
-            onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-2px) scale(1.05)';
-                e.currentTarget.style.boxShadow = '0 8px 25px rgba(99, 102, 241, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)';
-                e.currentTarget.style.borderColor = 'rgba(99, 102, 241, 0.6)';
-            }}
-            onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(0) scale(1)';
-                e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)';
-                e.currentTarget.style.borderColor = 'rgba(99, 102, 241, 0.3)';
-            }}
-        >
-            <span style={{
-                fontSize: '24px',
-                filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3))',
-            }}>
-                {icon}
-            </span>
-            <span style={{
-                color: '#e2e8f0',
-                fontSize: '11px',
-                fontWeight: 600,
-                letterSpacing: '0.5px',
-                textTransform: 'uppercase',
-                textShadow: '0 1px 2px rgba(0, 0, 0, 0.5)',
-            }}>
-                {label}
-            </span>
-        </div>
-    );
-};
+   
+   export const DraggableNode = ({ type, label, icon }) => {
+       const onDragStart = (event, nodeType) => {
+           const appData = { nodeType }
+           event.dataTransfer.setData('application/reactflow', JSON.stringify(appData));
+           event.dataTransfer.effectAllowed = 'move';
+       };
+   
+       return (
+           <div
+               onDragStart={(event) => onDragStart(event, type)}
+               draggable
+               style={{
+                   cursor: 'grab',
+                   minWidth: '64px',
+                   padding: '10px 12px',
+                   display: 'flex',
+                   flexDirection: 'column',
+                   alignItems: 'center',
+                   justifyContent: 'center',
+                   gap: '6px',
+                   borderRadius: 'var(--radius-md)',
+                   background: 'var(--bg-secondary)',
+                   border: '1px solid var(--border-light)',
+                   boxShadow: 'var(--shadow-sm)',
+                   transition: 'all 0.15s ease',
+                   userSelect: 'none',
+                   WebkitUserSelect: 'none',
+               }}
+               onMouseEnter={(e) => {
+                   e.currentTarget.style.borderColor = 'var(--accent-primary)';
+                   e.currentTarget.style.background = 'var(--accent-light)';
+                   e.currentTarget.style.transform = 'translateY(-2px)';
+                   e.currentTarget.style.boxShadow = 'var(--shadow-md)';
+               }}
+               onMouseLeave={(e) => {
+                   e.currentTarget.style.borderColor = 'var(--border-light)';
+                   e.currentTarget.style.background = 'var(--bg-secondary)';
+                   e.currentTarget.style.transform = 'translateY(0)';
+                   e.currentTarget.style.boxShadow = 'var(--shadow-sm)';
+               }}
+               onMouseDown={(e) => {
+                   e.currentTarget.style.cursor = 'grabbing';
+               }}
+               onMouseUp={(e) => {
+                   e.currentTarget.style.cursor = 'grab';
+               }}
+           >
+               {icon && (
+                   <span style={{
+                       fontSize: '20px',
+                       lineHeight: '1',
+                       filter: 'grayscale(20%)',
+                   }}>
+                       {icon}
+                   </span>
+               )}
+               <span style={{
+                   color: 'var(--text-primary)',
+                   fontSize: '11px',
+                   fontWeight: 500,
+                   letterSpacing: '0.3px',
+                   whiteSpace: 'nowrap',
+               }}>
+                   {label}
+               </span>
+           </div>
+       );
+   };

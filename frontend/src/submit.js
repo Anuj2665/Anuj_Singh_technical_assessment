@@ -38,51 +38,46 @@ export const SubmitButton = () => {
     };
 
     return (
-        <div style={{ 
-            position: 'fixed',
-            bottom: '30px',
-            right: '30px',
-            zIndex: 1000,
-        }}>
+        <div 
+            style={{ 
+                position: 'fixed',
+                right: '16px',
+                bottom: '16px',
+                zIndex: 1000,
+                width: '160px',
+            }}
+        >
             <button 
                 type="button" 
                 onClick={handleSubmit}
                 style={{
-                    padding: '16px 32px',
-                    fontSize: '15px',
-                    fontWeight: 700,
-                    letterSpacing: '0.5px',
-                    textTransform: 'uppercase',
+                    width: '100%',
+                    padding: '10px 16px',
+                    fontSize: '13px',
+                    fontWeight: 600,
                     cursor: 'pointer',
-                    background: 'linear-gradient(135deg, #6366f1 0%, #4f46e5 50%, #7c3aed 100%)',
+                    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
                     color: '#ffffff',
                     border: 'none',
-                    borderRadius: '50px',
-                    boxShadow: '0 10px 30px rgba(99, 102, 241, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1) inset',
-                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                    position: 'relative',
-                    overflow: 'hidden',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '10px',
+                    borderRadius: 'var(--radius-md)',
+                    boxShadow: '0 4px 14px 0 rgba(118, 75, 162, 0.39)',
+                    transition: 'all 0.2s ease',
+                    fontFamily: 'inherit',
+                    letterSpacing: '0.3px',
                 }}
                 onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'translateY(-3px) scale(1.02)';
-                    e.currentTarget.style.boxShadow = '0 20px 40px rgba(99, 102, 241, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1) inset';
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                    e.currentTarget.style.boxShadow = '0 6px 20px 0 rgba(118, 75, 162, 0.5)';
                 }}
                 onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = 'translateY(0) scale(1)';
-                    e.currentTarget.style.boxShadow = '0 10px 30px rgba(99, 102, 241, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1) inset';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.boxShadow = '0 4px 14px 0 rgba(118, 75, 162, 0.39)';
                 }}
                 onMouseDown={(e) => {
-                    e.currentTarget.style.transform = 'translateY(-1px) scale(0.98)';
-                }}
-                onMouseUp={(e) => {
-                    e.currentTarget.style.transform = 'translateY(-3px) scale(1.02)';
+                    e.currentTarget.style.transform = 'translateY(0)';
                 }}
             >
-                <span style={{ fontSize: '20px' }}>🚀</span>
-                <span>Submit Pipeline</span>
+                Analyze Pipeline
             </button>
         </div>
     );

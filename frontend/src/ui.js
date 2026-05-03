@@ -69,7 +69,6 @@ export const PipelineUI = () => {
                 const appData = JSON.parse(event.dataTransfer.getData('application/reactflow'));
                 const type = appData?.nodeType;
 
-                // check if the dropped element is valid
                 if (typeof type === 'undefined' || !type) {
                     return;
                 }
@@ -103,11 +102,9 @@ export const PipelineUI = () => {
             ref={reactFlowWrapper} 
             style={{
                 width: '100vw',
-                height: 'calc(100vh - 120px)',
-                marginTop: '100px',
-                borderRadius: '16px',
-                overflow: 'hidden',
-                boxShadow: 'inset 0 0 60px rgba(0, 0, 0, 0.3)',
+                height: 'calc(100vh - 100px)',
+                marginTop: '80px',
+                position: 'relative',
             }}
         >
             <ReactFlow
@@ -126,21 +123,13 @@ export const PipelineUI = () => {
                 fitView
             >
                 <Background 
-                    color="#475569" 
+                    color="var(--border-medium)" 
                     gap={gridSize} 
                     size={1}
-                    style={{ opacity: 0.3 }}
+                    style={{ opacity: 0.5 }}
                 />
                 <Controls />
-                <MiniMap 
-                    style={{
-                        background: 'rgba(15, 23, 42, 0.9)',
-                        border: '1px solid rgba(99, 102, 241, 0.2)',
-                        borderRadius: '12px',
-                    }}
-                    maskColor="rgba(0, 0, 0, 0.5)"
-                    nodeColor="#6366f1"
-                />
+                <MiniMap />
             </ReactFlow>
         </div>
     )

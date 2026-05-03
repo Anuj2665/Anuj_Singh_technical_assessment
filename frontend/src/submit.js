@@ -38,21 +38,51 @@ export const SubmitButton = () => {
     };
 
     return (
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px' }}>
+        <div style={{ 
+            position: 'fixed',
+            bottom: '30px',
+            right: '30px',
+            zIndex: 1000,
+        }}>
             <button 
                 type="button" 
                 onClick={handleSubmit}
                 style={{
-                    padding: '10px 20px',
-                    fontSize: '16px',
+                    padding: '16px 32px',
+                    fontSize: '15px',
+                    fontWeight: 700,
+                    letterSpacing: '0.5px',
+                    textTransform: 'uppercase',
                     cursor: 'pointer',
-                    backgroundColor: '#4CAF50',
-                    color: 'white',
+                    background: 'linear-gradient(135deg, #6366f1 0%, #4f46e5 50%, #7c3aed 100%)',
+                    color: '#ffffff',
                     border: 'none',
-                    borderRadius: '4px'
+                    borderRadius: '50px',
+                    boxShadow: '0 10px 30px rgba(99, 102, 241, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1) inset',
+                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                    position: 'relative',
+                    overflow: 'hidden',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '10px',
+                }}
+                onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-3px) scale(1.02)';
+                    e.currentTarget.style.boxShadow = '0 20px 40px rgba(99, 102, 241, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1) inset';
+                }}
+                onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                    e.currentTarget.style.boxShadow = '0 10px 30px rgba(99, 102, 241, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1) inset';
+                }}
+                onMouseDown={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-1px) scale(0.98)';
+                }}
+                onMouseUp={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-3px) scale(1.02)';
                 }}
             >
-                Submit Pipeline
+                <span style={{ fontSize: '20px' }}>🚀</span>
+                <span>Submit Pipeline</span>
             </button>
         </div>
     );

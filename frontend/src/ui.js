@@ -99,27 +99,49 @@ export const PipelineUI = () => {
     }, []);
 
     return (
-        <>
-            <div ref={reactFlowWrapper} style={{ width: '100wv', height: '70vh' }}>
-                <ReactFlow
-                    nodes={nodes}
-                    edges={edges}
-                    onNodesChange={onNodesChange}
-                    onEdgesChange={onEdgesChange}
-                    onConnect={onConnect}
-                    onDrop={onDrop}
-                    onDragOver={onDragOver}
-                    onInit={setReactFlowInstance}
-                    nodeTypes={nodeTypes}
-                    proOptions={proOptions}
-                    snapGrid={[gridSize, gridSize]}
-                    connectionLineType='smoothstep'
-                >
-                    <Background color="#aaa" gap={gridSize} />
-                    <Controls />
-                    <MiniMap />
-                </ReactFlow>
-            </div>
-        </>
+        <div 
+            ref={reactFlowWrapper} 
+            style={{
+                width: '100vw',
+                height: 'calc(100vh - 120px)',
+                marginTop: '100px',
+                borderRadius: '16px',
+                overflow: 'hidden',
+                boxShadow: 'inset 0 0 60px rgba(0, 0, 0, 0.3)',
+            }}
+        >
+            <ReactFlow
+                nodes={nodes}
+                edges={edges}
+                onNodesChange={onNodesChange}
+                onEdgesChange={onEdgesChange}
+                onConnect={onConnect}
+                onDrop={onDrop}
+                onDragOver={onDragOver}
+                onInit={setReactFlowInstance}
+                nodeTypes={nodeTypes}
+                proOptions={proOptions}
+                snapGrid={[gridSize, gridSize]}
+                connectionLineType='smoothstep'
+                fitView
+            >
+                <Background 
+                    color="#475569" 
+                    gap={gridSize} 
+                    size={1}
+                    style={{ opacity: 0.3 }}
+                />
+                <Controls />
+                <MiniMap 
+                    style={{
+                        background: 'rgba(15, 23, 42, 0.9)',
+                        border: '1px solid rgba(99, 102, 241, 0.2)',
+                        borderRadius: '12px',
+                    }}
+                    maskColor="rgba(0, 0, 0, 0.5)"
+                    nodeColor="#6366f1"
+                />
+            </ReactFlow>
+        </div>
     )
 }

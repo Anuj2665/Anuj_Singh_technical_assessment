@@ -1,13 +1,90 @@
+/* ============================================
+   Premium SaaS Theme - VectorShift Inspired
+   Color Palette:
+   - Primary Dark: #0f172a (slate-900)
+   - Secondary Dark: #1e293b (slate-800)
+   - Accent: #6366f1 (indigo-500)
+   - Accent Hover: #4f46e5 (indigo-600)
+   - Surface: #ffffff
+   - Surface Alt: #f1f5f9 (slate-100)
+   - Text Primary: #0f172a
+   - Text Secondary: #64748b
+   ============================================ */
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  min-height: 100vh;
+  color: #f8fafc;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Fira Code', source-code-pro, Menlo, Monaco, Consolas, monospace;
+}
+
+/* ReactFlow Canvas Customization */
+.react-flow {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+}
+
+.react-flow__background {
+  background-color: transparent !important;
+}
+
+.react-flow__controls {
+  background: rgba(30, 41, 59, 0.9) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(99, 102, 241, 0.2) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4) !important;
+  padding: 8px !important;
+}
+
+.react-flow__controls button {
+  background: transparent !important;
+  border: none !important;
+  color: #94a3b8 !important;
+  transition: all 0.2s ease !important;
+  border-radius: 8px !important;
+}
+
+.react-flow__controls button:hover {
+  background: rgba(99, 102, 241, 0.2) !important;
+  color: #6366f1 !important;
+}
+
+.react-flow__minimap {
+  background: rgba(30, 41, 59, 0.9) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(99, 102, 241, 0.2) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4) !important;
+}
+
+.react-flow__attribution {
+  display: none !important;
+}
+
+/* Selection and Edge Styles */
+.react-flow__selection {
+  background: rgba(99, 102, 241, 0.1) !important;
+  border: 2px solid #6366f1 !important;
+}
+
+.react-flow__edge-path {
+  stroke: #6366f1 !important;
+  stroke-width: 2px;
+  filter: drop-shadow(0 0 4px rgba(99, 102, 241, 0.5));
+}
+
+.react-flow__connection-line {
+  stroke: #6366f1 !important;
+  stroke-width: 2px;
 }
